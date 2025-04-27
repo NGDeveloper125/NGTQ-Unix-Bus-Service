@@ -1,14 +1,26 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Serialize, Deserialize)]
+pub enum BusRequest {
+    PushTask(Task),
+    PullTask(TaskIdentifier)
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[derive(Debug, Serialize, Deserialize)]
+pub enum TaskIdentifier {
+    Id(String),
+    Category(String)
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[derive(Debug, Serialize, Deserialize)]
+pub enum Task {
+    Id(String),
+    Category(String, String)
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct BusResponse {
+    pub successful: bool,
+    pub error: Option<String>,
+    pub payload: Option<String>
 }
