@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = [
+    "ngtq_unix_bus_service",
+    "bus_service_models",
+    "bus_service_client",
+    "integration_tests"
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["NGDeveloper.NGDeveloper125@outlook.com"]
