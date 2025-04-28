@@ -1,5 +1,4 @@
 use std::{fs::File, io::BufReader};
-
 use clap::Parser;
 use config::BusConfig;
 use ngtask_queue_basic::TaskQueue;
